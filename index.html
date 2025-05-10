@@ -5,38 +5,112 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/tosokit.css">
     <script src="assets/js/tosokit.js"></script>
+    <script>
+        function bareOk() {
+            document.getElementById('caution').style.display = 'none';
+            document.getElementById('main').style.display = '';
+        }
+
+    </script>
+    <style type="text/css">
+        #caution {
+            font-size: 0.8rem;
+            padding: 20px;
+            color: #333;
+            background: #eee;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            max-width: 600px;
+        }
+
+        #bareOk {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5;
+            position: relative;
+            display: inline-block;
+            padding: 0.8rem 2rem;
+
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            border-radius: 0.5rem;
+
+            color: #000;
+            background: #FFF;
+        }
+
+        #bareOk:hover {
+            color: #000;
+            background-color: #eee;
+        }
+
+        #infoClose {
+            border: 0px solid #000;
+            color: #666;
+            margin: 0 auto;
+        }
+    </style>
     <title>例のあれキット</title>
 </head>
 
 <body>
-    <header>
-        <h1>魔術基板の学習キット</h1>
-        ピンの文言はひらがな・カタカナのみ有効。それ以外は無視されます。<br>
-        長すぎると表示が崩れます。列なら24文字程度、円なら18文字程度までが目安です。<br>
+    <div id="caution">
+        本キットは、宴規様作シナリオ『塔葬の国』（ <a href="https://booth.pm/ja/items/2117487"
+            target="_blank">https://booth.pm/ja/items/2117487</a> ）に関連する場でご利用いただける”非”公式素材です。<br>
+        シナリオ『塔葬の国』第4章以降のネタバレが含まれます。<br>
+        <br><br>
+        本作は、「株式会社アークライト」及び「株式会社KADOKAWA」が権利を有する『クトゥルフ神話TRPG』シリーズの二次創作物です。<br>
         <br>
-    </header>
-    <input type="text" id="kibanName" name="kibanName" placeholder="魔術基板名"><br>
-    <input type="text" id="pinTextInput" name="pinTextInput" placeholder="ピンの文言"><span class="required">必須</span><br>
+        Call of Cthulhu is copyright ©1981, 2015, 2019 by Chaosium Inc. ;all rights reserved. Arranged by Arclight
+        Inc.<br>
+        Call of Cthulhu is a registered trademark of Chaosium Inc.<br>
+        PUBLISHED BY KADOKAWA CORPORATION　「クトゥルフ神話TRPG」<br>
+        <br><br>
+        <input id="bareOk" type="button" onclick="bareOk();" value="OK">
+    </div>
+    <div class="main" id="main" style="display:none;">
+        <header>
+            <h1>魔術基板の学習キット</h1>
+            ピンの文言はひらがな・カタカナのみ有効。それ以外は無視されます。<br>
+            長すぎると表示が崩れます。列なら24文字程度、円なら18文字程度までが目安です。<br>
+            <br>
+        </header>
+        <input type="text" id="kibanName" name="kibanName" placeholder="魔術基板名"><br>
+        <input type="text" id="pinTextInput" name="pinTextInput" placeholder="ピンの文言"><span
+            class="required">必須</span><br>
 
-    <form id="pinmode">
+        <form id="pinmode">
 
-        <input type="radio" id="line" name="pinmode" value="line" checked><label for="line">列</label>
-        <input type="radio" id="circle" name="pinmode" value="circle"><label for="circle">円</label>
+            <input type="radio" id="line" name="pinmode" value="line" checked><label for="line">列</label>
+            <input type="radio" id="circle" name="pinmode" value="circle"><label for="circle">円</label>
 
-        <input type="checkbox" id="bgClear" name="bgClear" value="none"><label for="bgClear">背景透過</label>
-    </form>
+            <input type="checkbox" id="bgClear" name="bgClear" value="none"><label for="bgClear">背景透過</label>
+        </form>
 
-    <input type="text" id="pinText" name="pinText" disabled>
-    <br>
-    <input type="button" value="作成" id="button" class="btn" onclick="getCanvas()">
+        <input type="text" id="pinText" name="pinText" disabled>
+        <br>
+        <input type="button" value="作成" id="button" class="btn" onclick="getCanvas()">
 
-    <a id="hiddenLink" download="canvas.png" style="display: none;">link</a>
-    <img id="canvasImage" src="" style="display: none;">
-    <button id="downloadCanvas" class="btn" onclick="downloadCanvas()">画像ダウンロード</button><br>
+        <a id="hiddenLink" download="canvas.png" style="display: none;">link</a>
+        <img id="canvasImage" src="" style="display: none;">
+        <button id="downloadCanvas" class="btn" onclick="downloadCanvas()">画像ダウンロード</button><br>
 
-    <br>
-    <canvas id="kiban" width="1000" height="1200"></canvas>
-    <br>
+        <br>
+        <canvas id="kiban" width="1000" height="1200"></canvas>
+        <br>
+    </div>
 
 </body>
 

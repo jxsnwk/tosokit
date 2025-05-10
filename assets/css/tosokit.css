@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "魔術言語otf";
+  src: url("../../Calligraphr-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "魔術言語ttf";
+  src: url("../../Calligraphr-Regular.ttf") format("truetype");
+}
+
+#kiban {
+  width: 80%;
+  max-width: 400px;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+
+  color: #fff;
+  background: #f56500;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #ffa600;
+}
+
+#kibanName,
+#pinTextInput {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+
+#pinText {
+  font-family: "魔術言語otf, 魔術言語ttf";
+  width: 100%;
+  max-width: 410px;
+  opacity: 0;
+}
+
+.required {
+  border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #5bc8ac;
+  color: #fff;
+  font-size: 14px;
+}
+
+.btn,
+#pinmode,
+#bgClear,
+#kibanName,
+#pinTextInput,
+#pinText {
+  margin-left: 20px;
+}
